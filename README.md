@@ -65,11 +65,14 @@ You will only need the token as a property in your struct in this application, b
     
     - A `password` String
 
-**NOTE: This API expects the encoded User object's keys to be "username" and "password". If you wish to give the properties different names for some reason, you will need to make a coding keys enum to map the new property names to the correct keys the API expects.**
+**NOTE: This API expects the encoded User object's keys to be "username" and "password". If you wish to give the properties different names for some reason, you will need to make a coding keys enum to map the new property names to the 
+correct keys the API expects.**
 
 ## Part 3 - GigController
 
-1. Create a new Swift file called "GigController.swift" and make a class in it called `GigController`. This class will be responsible for signing you up, and logging you in for today then additionally creating gigs, and fetching gigs tomorrow. We'll keep everything in this class for simplicity's sake but you may choose to have an "AuthenticationController" to handle the authentication aspect of the API. These design decisions are up to the developer and their team. At this point in your learning, implementing one way or the other shouldn't be something to worry over.
+1. Create a new Swift file called "GigController.swift" and make a class in it called `GigController`. This class will be responsible for signing you up, and logging you in for today then additionally creating gigs, and fetching gigs tomorrow.
+We'll keep everything in this class for simplicity's sake but you may choose to have an "AuthenticationController" to handle the authentication aspect of the API. These design decisions are up to the developer and their team. At this point in your learning, 
+implementing one way or the other shouldn't be something to worry over.
 
 2. Add the following properties:
     
@@ -77,7 +80,8 @@ You will only need the token as a property in your struct in this application, b
     
     - A `baseURL: URL` constant. See the API documenatation [here](https://github.com/LambdaSchool/ios-gigs/blob/master/APIDocumentation.md) for the url you should use. 
 
-**NOTE: Before you begin the next step, be aware that you will need to add an "application/json" Content-Type header to any POST request, or it will not work properly. As an example, you would add this line once you have a request object:**
+**NOTE: Before you begin the next step, be aware that you will need to add an "application/json" Content-Type header to any POST request, or it will not work properly. As an example, 
+you would add this line once you have a request object:**
 
 ```
 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -87,7 +91,8 @@ request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
     - Signing up for the API using a username and password. Once you "sign up", you can then log into the API like you did in the guided project this morning.
     
-    - Logging in to the API using a username and password. This will give you back a token in JSON data. Decode a `Bearer` object from this data and set the value of bearer property you made in this `GigController` so you can authenticate the requests that require it tomorrow.
+    - Logging in to the API using a username and password. This will give you back a token in JSON data. Decode a `Bearer` object from this data and set the value of bearer property you made in this `GigController`
+    so you can authenticate the requests that require it tomorrow.
     
 ## Part 4 - View Controllers
 
@@ -125,5 +130,6 @@ request.setValue("application/json", forHTTPHeaderField: "Content-Type")
     - In the button's action, based on the `loginType` property, perform the corresponding method in the `gigController` to either sign them up or log them in. If the **sign up** is successful, present an alert telling them they can log in. If the **log in** is successful, dismiss the view controller to take them back to the `GigsTableViewController`.
     
 
-**The API documentation only showed what was required for this module project. For the next module project, you will continue writing this project. The updated API documentation can be found in the day2 branch's README of this repo here: https://github.com/LambdaSchool/ios-gigs/blob/day2/APIDocumentation.md**
+**The API documentation only showed what was required for this module project. For the next module project, you will continue writing this project. The updated API documentation can be found in the day2 branch's README 
+of this repo here: https://github.com/LambdaSchool/ios-gigs/blob/day2/APIDocumentation.md**
 
